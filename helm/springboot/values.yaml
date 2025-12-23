@@ -1,0 +1,4 @@
+
+image:
+  repository: yourdockerhub/springboot
+  tag: latest

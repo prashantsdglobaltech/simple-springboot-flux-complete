@@ -1,0 +1,19 @@
+
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: springboot
+  namespace: default
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: ./helm/springboot
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+  values:
+    image:
+      repository: yourdockerhub/springboot
+      tag: latest
